@@ -1,7 +1,34 @@
-/* Kapitel 08
-   Nur Styles für dieses Kapitel kommen in diese Datei.
-   So können wir es später ändern, ohne andere Kapitel anzufassen.
-*/
-.chapter-08 {
-  /* Platzhalter */
+.chapter-08 .chapter-header{margin-bottom:22px}.c8-progress{text-align:center;max-width:780px;margin:0 auto 16px}.c8-progress>span{display:block;margin-bottom:8px;color:var(--pink-dark);font-size:.78rem;font-weight:900;letter-spacing:.12em}.c8-progress>div{height:9px;overflow:hidden;border-radius:999px;background:#f4e5eb}.c8-progress i{display:block;height:100%;background:linear-gradient(90deg,#f5acc7,var(--pink-dark));transition:.4s}.c8-card,.c8-success{max-width:780px;margin:auto;padding:clamp(18px,4vw,34px);border:1px solid var(--line);border-radius:28px;background:rgba(255,252,253,.97);box-shadow:0 18px 50px rgba(151,89,112,.1);text-align:center}.c8-images{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:620px;margin:auto}.c8-images img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:18px;border:4px solid white;box-shadow:0 7px 18px rgba(95,63,75,.13)}.c8-slots{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;margin:24px auto 10px}.c8-slot{width:46px;height:52px;border:2px solid rgba(216,101,145,.45);border-radius:12px;color:var(--pink-dark);font-size:1.35rem;font-weight:900;background:white}.c8-help{color:var(--muted);font-size:.84rem}.c8-letters{display:grid;grid-template-columns:repeat(6,1fr);gap:9px;max-width:570px;margin:auto}.c8-letter{min-height:49px;border:1px solid var(--line);border-radius:13px;color:var(--text);font-size:1.15rem;font-weight:900;background:white;cursor:pointer}.c8-letter:disabled{opacity:.22}.c8-delete{margin-top:14px}.c8-feedback{min-height:24px;margin:14px 0 0;font-weight:850}.good{color:#5f9f72}.bad{color:#c95e78}.c8-check{width:72px;height:72px;display:grid;place-items:center;margin:auto;border-radius:50%;color:white;font-size:38px;font-weight:900;background:#70b982}.c8-success h3{font-size:clamp(1.8rem,5vw,2.7rem)}.c8-success>p{color:var(--muted)}.c8-gift{display:grid;gap:5px;margin:34px auto}.c8-gift span{color:var(--muted);font-size:.78rem;font-weight:850;letter-spacing:.16em}.c8-gift strong{color:var(--pink-dark);font-size:clamp(1.8rem,6vw,3.2rem)}#f8{display:grid;grid-template-columns:1fr auto;gap:10px;max-width:560px;margin:20px auto 0}#k8{min-width:0;padding:14px;border:1px solid var(--line);border-radius:16px;text-align:center;font-weight:800}.shake{animation:c8s .3s}@keyframes c8s{25%{transform:translateX(-4px)}50%{transform:translateX(4px)}75%{transform:translateX(-2px)}}@media(max-width:620px){.c8-card,.c8-success{padding-inline:12px}.c8-images{gap:7px}.c8-images img{border-radius:13px;border-width:3px}.c8-slot{width:38px;height:45px}.c8-letters{grid-template-columns:repeat(4,1fr)}#f8{grid-template-columns:1fr}}
+
+/* Geschenk-Symbol wie in den vorherigen Kapiteln */
+.c8-gift-box {
+  position: relative;
+  width: 155px;
+  height: 135px;
+  margin: 30px auto 22px;
+  filter: drop-shadow(0 18px 22px rgba(172,91,121,.18));
+  animation: c8GiftFloat 2.8s ease-in-out infinite;
+}
+.c8-gift-body {
+  position:absolute; left:14px; right:14px; bottom:0;
+  height:100px; border-radius:10px 10px 17px 17px;
+  background:linear-gradient(145deg,#f4a8c4,#df7099);
+}
+.c8-gift-lid {
+  position:absolute; left:3px; right:3px; top:19px; z-index:2;
+  height:34px; border-radius:10px;
+  background:linear-gradient(145deg,#fac0d5,#e985aa);
+}
+.c8-gift-ribbon-v {
+  position:absolute; z-index:3; top:18px; bottom:0; left:50%;
+  width:24px; transform:translateX(-50%);
+  background:rgba(255,255,255,.72);
+}
+.c8-gift-ribbon-h {
+  position:absolute; z-index:3; left:14px; right:14px; top:58px;
+  height:22px; background:rgba(255,255,255,.72);
+}
+@keyframes c8GiftFloat {
+  0%,100% { transform:translateY(0) rotate(-1deg); }
+  50% { transform:translateY(-8px) rotate(1deg); }
 }

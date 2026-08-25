@@ -1,7 +1,407 @@
-/* Kapitel 03
-   Nur Styles für dieses Kapitel kommen in diese Datei.
-   So können wir es später ändern, ohne andere Kapitel anzufassen.
-*/
-.chapter-03 {
-  /* Platzhalter */
+/* Kapitel 03 – Timeline */
+
+.chapter-03-header {
+  margin-bottom: 24px;
+}
+
+.chapter-03-game {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.chapter-03-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.chapter-03-hint > span {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--pink-dark);
+  font-weight: 900;
+  background: var(--pink-soft);
+}
+
+.chapter-03-hint p {
+  margin: 0;
+}
+
+.chapter-03-timeline {
+  display: grid;
+  gap: 10px;
+}
+
+.chapter-03-card {
+  display: grid;
+  grid-template-columns: 32px 42px 1fr 34px;
+  align-items: center;
+  gap: 10px;
+  min-height: 70px;
+  padding: 10px 12px;
+  border: 1px solid rgba(239,145,180,.20);
+  border-radius: 18px;
+  background: rgba(255,252,253,.96);
+  box-shadow: 0 8px 20px rgba(151,89,112,.07);
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  transition: transform .17s ease, box-shadow .17s ease, border-color .17s ease;
+}
+
+.chapter-03-card:active {
+  cursor: grabbing;
+}
+
+.chapter-03-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 11px 24px rgba(151,89,112,.11);
+}
+
+.chapter-03-card.is-dragging,
+.chapter-03-card.touch-dragging {
+  opacity: .58;
+  transform: scale(.985);
+  border-color: var(--pink);
+  box-shadow: 0 14px 28px rgba(217,103,145,.17);
+}
+
+.chapter-03-card.drag-over {
+  border-color: var(--pink-dark);
+  background: #fff2f7;
+}
+
+.chapter-03-grip {
+  color: #c599aa;
+  font-size: 1.35rem;
+  font-weight: 900;
+  transform: rotate(90deg);
+}
+
+.chapter-03-card-emoji {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  background: #fff0f6;
+}
+
+.chapter-03-card-title {
+  font-weight: 850;
+  line-height: 1.3;
+}
+
+.chapter-03-card-position {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--pink-dark);
+  font-size: .82rem;
+  font-weight: 900;
+  background: var(--pink-soft);
+}
+
+.chapter-03-actions {
+  margin-top: 22px;
+  text-align: center;
+}
+
+.chapter-03-feedback {
+  min-height: 24px;
+  margin: 14px 0 0;
+  font-weight: 800;
+  text-align: center;
+}
+
+.chapter-03-feedback.is-correct { color: #5f9f72; }
+.chapter-03-feedback.is-wrong { color: #c95e78; }
+
+.chapter-03-solved {
+  padding: clamp(22px, 5vw, 40px);
+  border: 1px solid rgba(239,145,180,.22);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,229,239,.78), transparent 30%),
+    rgba(255,252,253,.96);
+  box-shadow: 0 18px 50px rgba(151,89,112,.10);
+}
+
+.chapter-03-solved-in {
+  animation: chapter03SolvedIn .7s cubic-bezier(.2,.85,.25,1.05) both;
+}
+
+.chapter-03-line-wrap {
+  position: relative;
+  max-width: 620px;
+  margin: 0 auto 38px;
+  padding: 8px 0;
+}
+
+.chapter-03-line {
+  position: absolute;
+  top: 14px;
+  bottom: 14px;
+  left: 132px;
+  width: 3px;
+  border-radius: 999px;
+  background: linear-gradient(to bottom, #f4a5c2, var(--pink-dark));
+  transform-origin: top;
+  animation: chapter03LineGrow 1.35s ease both;
+}
+
+.chapter-03-solved-list {
+  position: relative;
+  display: grid;
+  gap: 15px;
+}
+
+.chapter-03-solved-row {
+  display: grid;
+  grid-template-columns: 112px 38px 1fr;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: chapter03RowIn .48s ease forwards;
+}
+
+.chapter-03-solved-date {
+  color: var(--muted);
+  font-size: .85rem;
+  font-weight: 820;
+  text-align: right;
+}
+
+.chapter-03-dot {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  border-radius: 50%;
+  color: white;
+  font-size: .78rem;
+  background: linear-gradient(145deg,#f7abc7,#e576a0);
+  box-shadow: 0 5px 12px rgba(221,108,149,.2);
+}
+
+.chapter-03-solved-title {
+  font-weight: 850;
+}
+
+.chapter-03-ending-copy {
+  padding-top: 28px;
+  border-top: 1px solid rgba(239,145,180,.18);
+  text-align: center;
+}
+
+.chapter-03-ending-copy h3 {
+  max-width: 600px;
+  margin: 0 auto 10px;
+  font-size: clamp(1.7rem,5vw,2.75rem);
+  letter-spacing: -.035em;
+}
+
+.chapter-03-ending-copy > p {
+  color: var(--muted);
+}
+
+.chapter-03-success-heart {
+  width: 66px;
+  height: 66px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  color: white;
+  font-size: 30px;
+  background: linear-gradient(145deg,#f7abc7,#e576a0);
+  box-shadow: 0 14px 32px rgba(221,108,149,.25);
+  animation: chapter03HeartBeat 1.8s ease-in-out infinite;
+}
+
+.chapter-03-gift-box {
+  position: relative;
+  width: 155px;
+  height: 135px;
+  margin: 30px auto 22px;
+  filter: drop-shadow(0 18px 22px rgba(172,91,121,.18));
+  animation: chapter03GiftFloat 2.8s ease-in-out infinite;
+}
+
+.chapter-03-gift-body {
+  position: absolute;
+  left: 14px; right: 14px; bottom: 0;
+  height: 100px;
+  border-radius: 10px 10px 17px 17px;
+  background: linear-gradient(145deg,#f4a8c4,#df7099);
+}
+
+.chapter-03-gift-lid {
+  position: absolute;
+  left: 3px; right: 3px; top: 19px; z-index: 2;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(145deg,#fac0d5,#e985aa);
+}
+
+.chapter-03-gift-ribbon-v {
+  position: absolute;
+  z-index: 3;
+  top: 18px; bottom: 0; left: 50%;
+  width: 24px;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,.72);
+}
+
+.chapter-03-gift-ribbon-h {
+  position: absolute;
+  z-index: 3;
+  left: 14px; right: 14px; top: 58px;
+  height: 22px;
+  background: rgba(255,255,255,.72);
+}
+
+.chapter-03-gift-number {
+  display: grid;
+  gap: 4px;
+  margin: 0 auto 34px;
+}
+
+.chapter-03-gift-number span {
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 850;
+  letter-spacing: .16em;
+}
+
+.chapter-03-gift-number strong {
+  color: var(--pink-dark);
+  font-size: clamp(1.8rem,6vw,3.2rem);
+  letter-spacing: -.025em;
+}
+
+.chapter-03-key-section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 28px;
+  border-top: 1px solid rgba(239,145,180,.18);
+}
+
+.chapter-03-key-section > p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.chapter-03-key-form {
+  width: min(540px,100%);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  margin: 18px auto 0;
+}
+
+.chapter-03-key-input {
+  width: 100%;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid rgba(216,101,145,.24);
+  border-radius: 16px;
+  outline: 0;
+  color: var(--text);
+  font-weight: 800;
+  text-align: center;
+  background: white;
+}
+
+.chapter-03-key-input:focus {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 4px rgba(239,145,180,.12);
+}
+
+.chapter-03-debug {
+  margin-top: 20px;
+  padding: 12px 14px;
+  border: 1px dashed rgba(216,101,145,.3);
+  border-radius: 14px;
+  color: #9a6f80;
+  font-size: .85rem;
+  text-align: center;
+  background: #fff8fb;
+}
+
+.chapter-03-timeline.shake,
+.chapter-03-key-input.shake {
+  animation: chapter03Shake .3s ease;
+}
+
+@keyframes chapter03SolvedIn {
+  from { opacity: 0; transform: translateY(24px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes chapter03LineGrow {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+@keyframes chapter03RowIn {
+  from { opacity: 0; transform: translateX(-14px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes chapter03HeartBeat {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+}
+
+@keyframes chapter03GiftFloat {
+  0%,100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes chapter03Shake {
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-2px); }
+}
+
+@media (max-width: 620px) {
+  .chapter-03-card {
+    grid-template-columns: 28px 36px 1fr 30px;
+    padding-inline: 9px;
+  }
+
+  .chapter-03-card-emoji {
+    width: 34px;
+    height: 34px;
+    font-size: 1.1rem;
+  }
+
+  .chapter-03-line {
+    left: 95px;
+  }
+
+  .chapter-03-solved-row {
+    grid-template-columns: 76px 34px 1fr;
+    gap: 6px;
+  }
+
+  .chapter-03-solved-date {
+    font-size: .72rem;
+  }
+
+  .chapter-03-key-form {
+    grid-template-columns: 1fr;
+  }
 }

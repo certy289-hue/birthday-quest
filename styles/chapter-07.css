@@ -1,7 +1,40 @@
-/* Kapitel 07
-   Nur Styles für dieses Kapitel kommen in diese Datei.
-   So können wir es später ändern, ohne andere Kapitel anzufassen.
-*/
-.chapter-07 {
-  /* Platzhalter */
+/* Kapitel 07 – Unbekanntes Gerät */
+.chapter-07-intro{margin-bottom:22px}.c7-stage{display:grid;place-items:center;gap:14px}.c7-phone{width:min(390px,94vw);height:720px;position:relative;padding:10px;border:3px solid #26242a;border-radius:48px;background:#111;box-shadow:0 28px 70px rgba(60,35,45,.28);transition:.5s}.c7-screen{height:100%;overflow:hidden;position:relative;border-radius:37px;background:linear-gradient(155deg,#f6b7cf,#e98caf 45%,#8e6fb7);color:white}.c7-island{position:absolute;z-index:20;top:20px;left:50%;width:108px;height:28px;transform:translateX(-50%);border-radius:20px;background:#090909}.c7-homebar{position:absolute;z-index:30;bottom:17px;left:50%;width:120px;height:5px;transform:translateX(-50%);border-radius:9px;background:rgba(255,255,255,.85)}.c7-lock,.c7-pin,.c7-home,.c7-app{height:100%;box-sizing:border-box}.c7-lock{padding:60px 16px 26px;background:linear-gradient(rgba(35,16,30,.08),rgba(35,16,30,.18))}.c7-clock{display:block;margin:auto;border:0;color:white;font-size:4.1rem;font-weight:300;letter-spacing:-.06em;background:none}.c7-lockdate{text-align:center;margin-top:-5px;margin-bottom:24px}.c7-notifications{display:grid;gap:8px}.c7-notification{display:grid;gap:2px;padding:10px 12px;border:1px solid rgba(255,255,255,.24);border-radius:15px;color:#2e2730;background:rgba(255,255,255,.78);backdrop-filter:blur(12px);font-size:.78rem}.c7-notification b{font-size:.76rem}.c7-note{background:rgba(255,246,203,.9)}.c7-lock-button{position:absolute;bottom:45px;left:50%;transform:translateX(-50%);width:75%;padding:12px;border:1px solid rgba(255,255,255,.35);border-radius:999px;color:white;font-weight:800;background:rgba(255,255,255,.16)}
+.c7-pin{padding:75px 30px 35px;text-align:center;background:linear-gradient(155deg,#d48eaa,#725d98)}.c7-pin-lock{font-size:2rem}.c7-pin h3{margin:8px 0 18px}.c7-dots{display:flex;justify-content:center;gap:16px;margin-bottom:30px}.c7-dots i{width:12px;height:12px;border:1.5px solid white;border-radius:50%}.c7-dots i.filled{background:white}.c7-keypad{display:grid;grid-template-columns:repeat(3,70px);justify-content:center;gap:12px}.c7-keypad button{width:70px;height:70px;border:1px solid rgba(255,255,255,.25);border-radius:50%;color:white;font-size:1.6rem;background:rgba(255,255,255,.15)}.c7-keypad .c7-delete{border:0;font-size:1.2rem;background:transparent}.c7-pin-feedback{height:22px;font-weight:700}.c7-text-button{border:0;color:white;text-decoration:underline;background:none}.unlocking{transform:scale(1.02);filter:brightness(1.1)}
+.c7-home{padding:50px 18px 38px;background:linear-gradient(150deg,#f1b1ca,#9a75b7 70%,#695c9a)}.c7-status{position:absolute;top:15px;left:0;right:0;display:flex;justify-content:space-between;padding:0 25px;font-size:.72rem;font-weight:800}.c7-appgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px 12px;margin-top:22px}.c7-appicon{display:grid;place-items:center;gap:5px;border:0;color:white;background:none;font-size:.66rem;text-shadow:0 1px 3px rgba(0,0,0,.25)}.c7-appicon span{width:55px;height:55px;display:grid;place-items:center;border-radius:14px;font-size:1.8rem;background:rgba(255,255,255,.92);box-shadow:0 4px 12px rgba(0,0,0,.12);text-shadow:none}.c7-dock{position:absolute;left:14px;right:14px;bottom:25px;display:flex;justify-content:space-around;padding:10px;border-radius:24px;background:rgba(255,255,255,.25);backdrop-filter:blur(12px)}.c7-dock .c7-appicon span{width:53px;height:53px}.c7-phone.dark .c7-home{background:linear-gradient(150deg,#25232d,#393148 70%,#1d1c28)}
+.c7-app{padding:48px 0 28px;color:#26212a;background:#f8f7f9}.c7-appbar{height:42px;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;padding:0 13px;border-bottom:1px solid #e6e1e6}.c7-appbar button{border:0;color:#d45f8e;text-align:left;background:none}.c7-appbar strong{text-align:center}.c7-appbody{height:calc(100% - 42px);overflow:auto;padding:18px;box-sizing:border-box}.c7-weather,.c7-music,.c7-empty,.c7-camera,.c7-map,.c7-found,.c7-vault,.c7-restore{text-align:center;padding:40px 10px}.c7-weather{font-size:3rem}.c7-weather b{display:block;font-size:4rem}.c7-weather h3,.c7-weather p{font-size:1rem}.c7-map{position:relative;min-height:300px;border-radius:20px;background:linear-gradient(30deg,#dcead5 30%,#d8e4f0 30%,#d8e4f0 55%,#efe4ca 55%)}.c7-pinmark{font-size:3rem;margin:70px 0 10px}.c7-album{width:150px;height:150px;display:grid;place-items:center;margin:20px auto;border-radius:22px;font-size:5rem;background:#eee}.c7-fakeplay,.c7-system-btn{padding:11px 18px;border:0;border-radius:999px;color:white;font-weight:800;background:#df7099}.c7-camera{min-height:420px;color:white;background:#161419;border-radius:20px}.c7-camera>div{width:65px;height:65px;margin:280px auto 0;border:5px solid white;border-radius:50%}.c7-settings{display:grid;gap:10px}.c7-settings label{display:flex;justify-content:space-between;align-items:center;padding:15px;border-radius:14px;background:white}.c7-settings input{accent-color:#df7099}.c7-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.c7-gallery h3{grid-column:1/-1;text-align:left}.c7-gallery button{aspect-ratio:1;border:0;border-radius:12px;font-size:2.4rem;background:#eee}.photo-pop{animation:c7pop .3s}.c7-apphint{text-align:center;color:#8d7b85}.c7-notelist{display:grid;gap:8px}.c7-notelist h3{text-align:left}.c7-notelist button{display:grid;gap:3px;padding:14px;border:0;border-radius:12px;text-align:left;background:white}.c7-notelist span{color:#9a9096;font-size:.75rem}.c7-paper{text-align:left;padding:18px;border-radius:14px;background:#fff7c8;line-height:1.8}.c7-chat{display:grid;gap:8px}.c7-contact{text-align:center;font-weight:800;margin-bottom:15px}.bubble{max-width:78%;padding:10px 12px;border-radius:16px}.bubble.them{justify-self:start;text-align:left;background:#e9e7eb}.c7-found h3,.c7-vault h3{margin:12px 0}.c7-found{font-size:2.8rem}.c7-found p{font-size:1rem}.c7-vault{font-size:3rem}.c7-vault blockquote{margin:20px 0;padding:14px;border-radius:12px;font-size:1rem;background:#eee}.c7-restorebar{height:10px;overflow:hidden;margin:20px;border-radius:999px;background:#e4e0e4}.c7-restorebar i{display:block;width:0;height:100%;background:#df7099;transition:.1s}.c7-spinner{width:55px;height:55px;margin:20px auto;border:5px solid #eee;border-top-color:#df7099;border-radius:50%;animation:c7spin .8s linear infinite}
+.c7-outside-hint{margin:0;color:var(--muted);font-size:.85rem;text-align:center}.c7-reveal{max-width:720px;margin:auto;padding:38px 24px;border:1px solid rgba(239,145,180,.22);border-radius:28px;text-align:center;background:#fffafd;box-shadow:0 18px 50px rgba(151,89,112,.1);animation:c7in .6s ease}.c7-reveal-check{width:70px;height:70px;display:grid;place-items:center;margin:auto auto 10px;border-radius:50%;color:white;font-size:2rem;background:#70b883}.c7-reveal>span{color:#5b9d6d;font-size:.76rem;font-weight:900;letter-spacing:.14em}.c7-reveal h3{font-size:clamp(1.8rem,5vw,2.7rem)}.c7-gift{display:grid;gap:5px;margin:30px}.c7-gift small{color:var(--muted);font-weight:850;letter-spacing:.16em}.c7-gift strong{color:var(--pink-dark);font-size:clamp(1.8rem,6vw,3.1rem)}.c7-keyform{display:grid;grid-template-columns:1fr auto;gap:10px;max-width:540px;margin:18px auto}.c7-keyform input{min-width:0;padding:14px;border:1px solid rgba(216,101,145,.24);border-radius:16px;text-align:center;font-weight:800}.c7-key-feedback.good{color:#5f9f72}.c7-key-feedback.wrong{color:#c95e78}.c7-debug{margin-top:18px;padding:10px;border:1px dashed #d98bad;border-radius:12px;text-align:center;color:#98717f}.shake{animation:c7shake .3s}.hidden{display:none!important}@keyframes c7spin{to{transform:rotate(360deg)}}@keyframes c7shake{25%{transform:translateX(-5px)}50%{transform:translateX(5px)}75%{transform:translateX(-3px)}}@keyframes c7pop{50%{transform:scale(1.1)}}@keyframes c7in{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}@media(max-width:520px){.c7-phone{height:690px}.c7-notification{padding:8px 10px}.c7-keyform{grid-template-columns:1fr}.c7-appgrid{gap:22px 8px}.c7-appicon span{width:51px;height:51px}}
+
+
+/* Geschenk-Symbol wie in den vorherigen Kapiteln */
+.c7-gift-box {
+  position: relative;
+  width: 155px;
+  height: 135px;
+  margin: 30px auto 22px;
+  filter: drop-shadow(0 18px 22px rgba(172,91,121,.18));
+  animation: c7GiftFloat 2.8s ease-in-out infinite;
+}
+.c7-gift-body {
+  position:absolute; left:14px; right:14px; bottom:0;
+  height:100px; border-radius:10px 10px 17px 17px;
+  background:linear-gradient(145deg,#f4a8c4,#df7099);
+}
+.c7-gift-lid {
+  position:absolute; left:3px; right:3px; top:19px; z-index:2;
+  height:34px; border-radius:10px;
+  background:linear-gradient(145deg,#fac0d5,#e985aa);
+}
+.c7-gift-ribbon-v {
+  position:absolute; z-index:3; top:18px; bottom:0; left:50%;
+  width:24px; transform:translateX(-50%);
+  background:rgba(255,255,255,.72);
+}
+.c7-gift-ribbon-h {
+  position:absolute; z-index:3; left:14px; right:14px; top:58px;
+  height:22px; background:rgba(255,255,255,.72);
+}
+@keyframes c7GiftFloat {
+  0%,100% { transform:translateY(0) rotate(-1deg); }
+  50% { transform:translateY(-8px) rotate(1deg); }
 }

@@ -1,7 +1,466 @@
-/* Kapitel 04
-   Nur Styles für dieses Kapitel kommen in diese Datei.
-   So können wir es später ändern, ohne andere Kapitel anzufassen.
-*/
-.chapter-04 {
-  /* Platzhalter */
+/* Kapitel 04 – Der Code */
+
+.chapter-04-header {
+  margin-bottom: 24px;
+}
+
+.chapter-04-game {
+  max-width: 790px;
+  margin: 0 auto;
+}
+
+.chapter-04-code-display {
+  display: flex;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 14px);
+  margin-bottom: 24px;
+}
+
+.chapter-04-code-slot {
+  width: clamp(54px, 12vw, 78px);
+  height: clamp(66px, 14vw, 94px);
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(239,145,180,.24);
+  border-radius: 18px;
+  color: #b89aa6;
+  font-size: clamp(1.8rem, 7vw, 3rem);
+  font-weight: 950;
+  background: rgba(255,252,253,.94);
+  box-shadow: 0 10px 24px rgba(151,89,112,.07);
+}
+
+.chapter-04-code-slot.is-revealed {
+  color: var(--pink-dark);
+  border-color: rgba(230,111,155,.42);
+  background: #fff0f6;
+  box-shadow:
+    0 10px 26px rgba(151,89,112,.1),
+    0 0 0 4px rgba(239,145,180,.08);
+}
+
+.chapter-04-code-slot.reveal-pop {
+  animation: chapter04DigitPop .48s cubic-bezier(.2,.9,.25,1.15);
+}
+
+.chapter-04-mini-progress {
+  margin: 0 auto 18px;
+}
+
+.chapter-04-mini-progress > span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: .86rem;
+  font-weight: 820;
+  text-align: center;
+}
+
+.chapter-04-mini-track {
+  height: 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #f4e5eb;
+}
+
+.chapter-04-mini-bar {
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg,#f5acc7,var(--pink-dark));
+  transition: width .5s cubic-bezier(.2,.85,.25,1);
+}
+
+.chapter-04-riddle-card,
+.chapter-04-lock-section,
+.chapter-04-gift-reveal {
+  border: 1px solid rgba(239,145,180,.22);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,229,239,.7), transparent 35%),
+    rgba(255,252,253,.96);
+  box-shadow: 0 18px 50px rgba(151,89,112,.1);
+}
+
+.chapter-04-riddle-card {
+  min-height: 370px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  padding: clamp(24px,5vw,46px);
+  text-align: center;
+}
+
+.chapter-04-riddle-number,
+.chapter-04-lock-label,
+.chapter-04-complete-label {
+  display: inline-block;
+  margin-bottom: 11px;
+  color: var(--pink-dark);
+  font-size: .77rem;
+  font-weight: 900;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.chapter-04-riddle-card h3,
+.chapter-04-lock-section h3,
+.chapter-04-gift-reveal h3 {
+  max-width: 620px;
+  margin-bottom: 22px;
+  font-size: clamp(1.65rem,5vw,2.75rem);
+  line-height: 1.18;
+  letter-spacing: -.035em;
+}
+
+.chapter-04-answer-form,
+.chapter-04-key-form {
+  width: min(540px,100%);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.chapter-04-answer-input,
+.chapter-04-key-input {
+  width: 100%;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid rgba(216,101,145,.24);
+  border-radius: 16px;
+  outline: 0;
+  color: var(--text);
+  font-weight: 800;
+  text-align: center;
+  background: white;
+}
+
+.chapter-04-answer-input:focus,
+.chapter-04-key-input:focus,
+.chapter-04-lock-digit:focus {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 4px rgba(239,145,180,.12);
+}
+
+.chapter-04-feedback {
+  min-height: 24px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-weight: 800;
+  text-align: center;
+}
+
+.chapter-04-feedback.is-correct { color:#5f9f72; }
+.chapter-04-feedback.is-wrong { color:#c95e78; }
+
+.chapter-04-riddle-in {
+  animation: chapter04RiddleIn .45s ease both;
+}
+
+.chapter-04-riddle-out {
+  opacity: 0;
+  transform: translateX(-22px) scale(.985);
+  transition: opacity .3s ease, transform .3s ease;
+}
+
+.chapter-04-month-grid {
+  width: min(620px,100%);
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 9px;
+}
+
+.chapter-04-month {
+  padding: 12px 8px;
+  border: 1px solid rgba(239,145,180,.2);
+  border-radius: 14px;
+  color: #775963;
+  font-weight: 800;
+  cursor: pointer;
+  background: white;
+  transition: transform .16s ease, background .16s ease, border-color .16s ease;
+}
+
+.chapter-04-month:hover {
+  transform: translateY(-1px);
+  background: #fff0f6;
+  border-color: rgba(225,105,149,.42);
+}
+
+.chapter-04-pokemon-wrap {
+  width: min(300px, 68vw);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 20px;
+  border: 1px solid rgba(239,145,180,.18);
+  border-radius: 24px;
+  background: white;
+  box-shadow: 0 12px 28px rgba(151,89,112,.08);
+}
+
+.chapter-04-pokemon-wrap img {
+  width: 88%;
+  height: 88%;
+  object-fit: contain;
+}
+
+.chapter-04-lock-section {
+  min-height: 430px;
+  padding: clamp(24px,5vw,46px);
+  text-align: center;
+}
+
+.chapter-04-lock-in {
+  animation: chapter04LockIn .6s ease both;
+}
+
+.chapter-04-lock-icon {
+  position: relative;
+  width: 92px;
+  height: 104px;
+  margin: 0 auto 16px;
+}
+
+.chapter-04-lock-shackle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 54px;
+  height: 52px;
+  transform: translateX(-50%);
+  border: 10px solid #d98bad;
+  border-bottom: 0;
+  border-radius: 28px 28px 0 0;
+  transition: transform .65s cubic-bezier(.2,.8,.25,1);
+}
+
+.chapter-04-lock-body {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 84px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  transform: translateX(-50%);
+  border-radius: 18px;
+  font-size: 2.4rem;
+  background: linear-gradient(145deg,#f5aec8,#df719a);
+  box-shadow: 0 13px 28px rgba(187,92,126,.22);
+}
+
+.chapter-04-lock-icon.is-open .chapter-04-lock-shackle {
+  transform: translateX(-50%) translateY(-15px) rotate(-20deg);
+}
+
+.chapter-04-lock-form {
+  display: grid;
+  grid-template-columns: repeat(4,64px);
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.chapter-04-lock-digit {
+  width: 64px;
+  height: 72px;
+  padding: 0;
+  border: 1px solid rgba(216,101,145,.24);
+  border-radius: 16px;
+  outline: 0;
+  color: var(--pink-dark);
+  font-size: 2rem;
+  font-weight: 950;
+  text-align: center;
+  background: white;
+}
+
+.chapter-04-lock-button {
+  grid-column: 1 / -1;
+  margin-top: 4px;
+}
+
+.chapter-04-gift-reveal {
+  min-height: 560px;
+  padding: clamp(26px,5vw,48px);
+  text-align: center;
+}
+
+.chapter-04-gift-in {
+  animation: chapter04GiftIn .7s cubic-bezier(.2,.85,.25,1.05) both;
+}
+
+.chapter-04-success-heart {
+  width: 68px;
+  height: 68px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  color: white;
+  font-size: 31px;
+  background: linear-gradient(145deg,#f7abc7,#e576a0);
+  box-shadow: 0 14px 32px rgba(221,108,149,.25);
+  animation: chapter04HeartBeat 1.8s ease-in-out infinite;
+}
+
+.chapter-04-gift-reveal > p {
+  color: var(--muted);
+}
+
+.chapter-04-gift-box {
+  position: relative;
+  width: 155px;
+  height: 135px;
+  margin: 30px auto 22px;
+  filter: drop-shadow(0 18px 22px rgba(172,91,121,.18));
+  animation: chapter04GiftFloat 2.8s ease-in-out infinite;
+}
+
+.chapter-04-gift-body {
+  position:absolute;
+  left:14px; right:14px; bottom:0;
+  height:100px;
+  border-radius:10px 10px 17px 17px;
+  background:linear-gradient(145deg,#f4a8c4,#df7099);
+}
+
+.chapter-04-gift-lid {
+  position:absolute;
+  left:3px; right:3px; top:19px; z-index:2;
+  height:34px;
+  border-radius:10px;
+  background:linear-gradient(145deg,#fac0d5,#e985aa);
+}
+
+.chapter-04-gift-ribbon-v {
+  position:absolute;
+  z-index:3;
+  top:18px; bottom:0; left:50%;
+  width:24px;
+  transform:translateX(-50%);
+  background:rgba(255,255,255,.72);
+}
+
+.chapter-04-gift-ribbon-h {
+  position:absolute;
+  z-index:3;
+  left:14px; right:14px; top:58px;
+  height:22px;
+  background:rgba(255,255,255,.72);
+}
+
+.chapter-04-gift-number {
+  display:grid;
+  gap:4px;
+  margin:0 auto 34px;
+}
+
+.chapter-04-gift-number span {
+  color:var(--muted);
+  font-size:.78rem;
+  font-weight:850;
+  letter-spacing:.16em;
+}
+
+.chapter-04-gift-number strong {
+  color:var(--pink-dark);
+  font-size:clamp(1.8rem,6vw,3.2rem);
+  letter-spacing:-.025em;
+}
+
+.chapter-04-key-section {
+  max-width:600px;
+  margin:0 auto;
+  padding-top:28px;
+  border-top:1px solid rgba(239,145,180,.18);
+}
+
+.chapter-04-key-section > p {
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.chapter-04-key-form {
+  margin:18px auto 0;
+}
+
+.chapter-04-debug {
+  margin-top:20px;
+  padding:12px 14px;
+  border:1px dashed rgba(216,101,145,.3);
+  border-radius:14px;
+  color:#9a6f80;
+  font-size:.85rem;
+  text-align:center;
+  background:#fff8fb;
+}
+
+.shake {
+  animation:chapter04Shake .3s ease;
+}
+
+@keyframes chapter04DigitPop {
+  0% { transform:scale(.7); opacity:.4; }
+  65% { transform:scale(1.12); opacity:1; }
+  100% { transform:scale(1); }
+}
+
+@keyframes chapter04RiddleIn {
+  from { opacity:0; transform:translateX(18px); }
+  to { opacity:1; transform:translateX(0); }
+}
+
+@keyframes chapter04LockIn {
+  from { opacity:0; transform:translateY(24px) scale(.98); }
+  to { opacity:1; transform:translateY(0) scale(1); }
+}
+
+@keyframes chapter04GiftIn {
+  from { opacity:0; transform:translateY(28px) scale(.97); }
+  to { opacity:1; transform:translateY(0) scale(1); }
+}
+
+@keyframes chapter04HeartBeat {
+  0%,100% { transform:scale(1); }
+  50% { transform:scale(1.07); }
+}
+
+@keyframes chapter04GiftFloat {
+  0%,100% { transform:translateY(0) rotate(-1deg); }
+  50% { transform:translateY(-8px) rotate(1deg); }
+}
+
+@keyframes chapter04Shake {
+  25% { transform:translateX(-4px); }
+  50% { transform:translateX(4px); }
+  75% { transform:translateX(-2px); }
+}
+
+@media (max-width:620px) {
+  .chapter-04-answer-form,
+  .chapter-04-key-form {
+    grid-template-columns:1fr;
+  }
+
+  .chapter-04-riddle-card,
+  .chapter-04-lock-section,
+  .chapter-04-gift-reveal {
+    padding-inline:16px;
+  }
+
+  .chapter-04-month-grid {
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .chapter-04-lock-form {
+    grid-template-columns:repeat(4,54px);
+  }
+
+  .chapter-04-lock-digit {
+    width:54px;
+    height:64px;
+    font-size:1.75rem;
+  }
 }
