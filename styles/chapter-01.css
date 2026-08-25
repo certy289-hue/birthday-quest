@@ -1,0 +1,315 @@
+/* Kapitel 01 – Der Anfang */
+
+.chapter-01-header {
+  margin-bottom: 24px;
+}
+
+.chapter-01-game {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.chapter-01-progress {
+  margin-bottom: 18px;
+}
+
+.chapter-01-progress-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.chapter-01-progress-track {
+  height: 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #f4e5eb;
+}
+
+.chapter-01-progress-bar {
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #f5acc7, var(--pink-dark));
+  transition: width 0.5s cubic-bezier(.2,.85,.25,1);
+}
+
+.chapter-01-question-card {
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  padding: clamp(24px, 5vw, 46px);
+  border: 1px solid rgba(239,145,180,.22);
+  border-radius: 26px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,228,238,.75), transparent 45%),
+    rgba(255,252,253,.94);
+  box-shadow: 0 16px 44px rgba(151,89,112,.10);
+  transition: opacity .3s ease, transform .3s ease;
+}
+
+.chapter-01-question-label,
+.chapter-01-complete-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--pink-dark);
+  font-size: .77rem;
+  font-weight: 900;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.chapter-01-question-card h3,
+.chapter-01-gift-reveal h3 {
+  max-width: 620px;
+  margin-bottom: 24px;
+  font-size: clamp(1.65rem, 5vw, 2.75rem);
+  line-height: 1.18;
+  letter-spacing: -.035em;
+}
+
+.chapter-01-answer-form,
+.chapter-01-key-form {
+  width: min(520px, 100%);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.chapter-01-answer-input {
+  width: 100%;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid rgba(216,101,145,.24);
+  border-radius: 16px;
+  outline: 0;
+  color: var(--text);
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: .03em;
+  background: white;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.9);
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+
+.chapter-01-answer-input:focus {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 4px rgba(239,145,180,.12);
+}
+
+.chapter-01-submit {
+  white-space: nowrap;
+}
+
+.chapter-01-feedback {
+  min-height: 24px;
+  margin: 15px 0 0;
+  font-weight: 800;
+}
+
+.chapter-01-feedback.is-correct {
+  color: #5f9f72;
+}
+
+.chapter-01-feedback.is-wrong {
+  color: #c95e78;
+}
+
+.chapter-01-correct {
+  animation: chapter01Correct .65s ease both;
+}
+
+.chapter-01-card-out {
+  opacity: 0;
+  transform: translateX(-22px) scale(.985);
+}
+
+.chapter-01-gift-reveal {
+  min-height: 560px;
+  padding: clamp(26px, 5vw, 48px);
+  border: 1px solid rgba(239,145,180,.22);
+  border-radius: 28px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 15%, rgba(255,221,234,.82), transparent 34%),
+    rgba(255,252,253,.96);
+  box-shadow: 0 18px 50px rgba(151,89,112,.11);
+}
+
+.chapter-01-gift-in {
+  animation: chapter01GiftIn .7s cubic-bezier(.2,.85,.25,1.05) both;
+}
+
+.chapter-01-success-heart {
+  width: 68px;
+  height: 68px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  color: white;
+  font-size: 31px;
+  background: linear-gradient(145deg,#f7abc7,#e576a0);
+  box-shadow: 0 14px 32px rgba(221,108,149,.25);
+  animation: chapter01HeartBeat 1.8s ease-in-out infinite;
+}
+
+.chapter-01-gift-reveal > p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.chapter-01-gift-box {
+  position: relative;
+  width: 155px;
+  height: 135px;
+  margin: 32px auto 24px;
+  filter: drop-shadow(0 18px 22px rgba(172,91,121,.18));
+  animation: chapter01GiftFloat 2.8s ease-in-out infinite;
+}
+
+.chapter-01-gift-body {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 0;
+  height: 100px;
+  border-radius: 10px 10px 17px 17px;
+  background: linear-gradient(145deg,#f4a8c4,#df7099);
+}
+
+.chapter-01-gift-lid {
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  top: 19px;
+  z-index: 2;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(145deg,#fac0d5,#e985aa);
+}
+
+.chapter-01-gift-ribbon-v {
+  position: absolute;
+  z-index: 3;
+  top: 18px;
+  bottom: 0;
+  left: 50%;
+  width: 24px;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,.72);
+}
+
+.chapter-01-gift-ribbon-h {
+  position: absolute;
+  z-index: 3;
+  left: 14px;
+  right: 14px;
+  top: 58px;
+  height: 22px;
+  background: rgba(255,255,255,.72);
+}
+
+.chapter-01-gift-number {
+  display: grid;
+  gap: 4px;
+  margin: 0 auto 34px;
+}
+
+.chapter-01-gift-number span {
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 850;
+  letter-spacing: .16em;
+}
+
+.chapter-01-gift-number strong {
+  color: var(--pink-dark);
+  font-size: clamp(1.8rem, 6vw, 3.2rem);
+  letter-spacing: -.025em;
+}
+
+.chapter-01-key-section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 28px;
+  border-top: 1px solid rgba(239,145,180,.18);
+}
+
+.chapter-01-key-section > p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.chapter-01-key-form {
+  margin: 18px auto 0;
+}
+
+.chapter-01-debug {
+  margin-top: 20px;
+  padding: 12px 14px;
+  border: 1px dashed rgba(216,101,145,.3);
+  border-radius: 14px;
+  color: #9a6f80;
+  font-size: .85rem;
+  text-align: center;
+  background: #fff8fb;
+}
+
+.shake {
+  animation: chapter01Shake .3s ease;
+}
+
+@keyframes chapter01Correct {
+  0% { transform: scale(1); box-shadow: 0 16px 44px rgba(151,89,112,.10); }
+  45% { transform: scale(1.018); box-shadow: 0 18px 52px rgba(110,180,132,.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes chapter01GiftIn {
+  from { opacity: 0; transform: translateY(28px) scale(.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes chapter01HeartBeat {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+}
+
+@keyframes chapter01GiftFloat {
+  0%,100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes chapter01Shake {
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-2px); }
+}
+
+@media (max-width: 620px) {
+  .chapter-01-answer-form,
+  .chapter-01-key-form {
+    grid-template-columns: 1fr;
+  }
+
+  .chapter-01-question-card {
+    min-height: 330px;
+    padding-inline: 16px;
+  }
+
+  .chapter-01-gift-reveal {
+    padding-inline: 16px;
+  }
+
+  .chapter-01-submit,
+  .chapter-01-key-form .primary-button {
+    width: 100%;
+  }
+}
