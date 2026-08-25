@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff7fa">
+  <title>Für dich ❤️</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/chapter-01.css">
+  <link rel="stylesheet" href="styles/chapter-02.css">
+  <link rel="stylesheet" href="styles/chapter-03.css">
+  <link rel="stylesheet" href="styles/chapter-04.css">
+  <link rel="stylesheet" href="styles/chapter-05.css">
+  <link rel="stylesheet" href="styles/chapter-06.css">
+  <link rel="stylesheet" href="styles/chapter-07.css">
+  <link rel="stylesheet" href="styles/chapter-08.css">
+  <link rel="stylesheet" href="styles/chapter-09.css">
+</head>
+<body>
+  <div class="background-hearts" aria-hidden="true"></div>
+
+  <main class="app-shell">
+    <section id="homeView" class="view">
+      <div class="hero-card">
+        <div class="hero-heart">♥</div>
+        <span class="eyebrow">Deine Geburtstagsreise</span>
+        <h1>9 Kapitel. 9 Geschenke. Eine Reise für dich. ❤️</h1>
+        <p class="hero-copy">
+          Löse ein Kapitel, finde dein nächstes Geschenk und entdecke den Schlüssel,
+          der dich weiterführt.
+        </p>
+
+        <div class="progress-wrap">
+          <div class="progress-topline">
+            <span id="progressText">0 / 9 Kapitel</span>
+            <span id="progressPercent">0%</span>
+          </div>
+          <div class="progress-track">
+            <div id="progressBar" class="progress-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <section class="journey-card">
+        <div class="journey-heading">
+          <div>
+            <span class="eyebrow">Kapitelübersicht</span>
+            <h2>Deine Reise</h2>
+          </div>
+          <button id="resetButton" class="ghost-button debug-only hidden" type="button">
+            Fortschritt zurücksetzen
+          </button>
+        </div>
+
+        <div id="chapterList" class="chapter-list"></div>
+      </section>
+    </section>
+
+    <section id="chapterView" class="view hidden">
+      <button id="backButton" class="back-button" type="button">← Zur Übersicht</button>
+      <div id="chapterMount" class="chapter-mount"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast hidden" aria-live="polite"></div>
+
+  <script src="data/game-data.js"></script>
+  <script src="chapters/chapter-01.js"></script>
+  <script src="chapters/chapter-02.js"></script>
+  <script src="chapters/chapter-03.js"></script>
+  <script src="chapters/chapter-04.js"></script>
+  <script src="chapters/chapter-05.js"></script>
+  <script src="chapters/chapter-06.js"></script>
+  <script src="chapters/chapter-07.js"></script>
+  <script src="chapters/chapter-08.js"></script>
+  <script src="chapters/chapter-09.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
