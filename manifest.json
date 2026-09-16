@@ -1,0 +1,23 @@
+{
+  "name": "Deine Geburtstagsreise ❤️",
+  "short_name": "Geburtstagsreise",
+  "description": "Deine persönliche Geburtstagsreise ❤️",
+  "start_url": "/birthday-quest/",
+  "scope": "/birthday-quest/",
+  "display": "standalone",
+  "background_color": "#fff8fb",
+  "theme_color": "#f3a5c2",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
