@@ -19,7 +19,17 @@
   document.head.appendChild(manifest);
   </script>
 
-  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <script>
+  const isDebug = new URLSearchParams(window.location.search).get("debug") === "1";
+
+  const appleIcon = document.createElement("link");
+  appleIcon.rel = "apple-touch-icon";
+  appleIcon.href = isDebug
+    ? "icons/debug-192.png"
+    : "icons/icon-192.png";
+
+  document.head.appendChild(appleIcon);
+  </script>
 
   <meta name="theme-color" content="#f3a5c2">
 
