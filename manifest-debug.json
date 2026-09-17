@@ -1,6 +1,6 @@
 {
   "name": "Birthday Quest Debug",
-  "short_name": "Birthday Debug",
+  "short_name": "Geburtstagsreise Debug",
   "start_url": "/birthday-quest/?debug=1",
   "scope": "/birthday-quest/",
   "display": "standalone",
