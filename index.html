@@ -9,7 +9,15 @@
   
   <title>Geburtstagsreise ❤️</title>
 
-  <link rel="manifest" href="manifest.json">
+  <script>
+  const isDebug = new URLSearchParams(window.location.search).get("debug") === "1";
+
+  const manifest = document.createElement("link");
+  manifest.rel = "manifest";
+  manifest.href = isDebug ? "manifest-debug.json" : "manifest.json";
+
+  document.head.appendChild(manifest);
+  </script>
 
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 
